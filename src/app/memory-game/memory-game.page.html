@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>memory-game</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="nav('/home')">Inicio</ion-button>
+      <ion-button (click)="nav('/calculadora')">Calculadora</ion-button>
+      <ion-button (click)="nav('/princess-quiz')">Quiz</ion-button>
+
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">memory-game</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="memory-game">
+    <div class="juego_mesa">
+      <div class="card juego_carta" *ngFor="let card of cards" (click)="flipCard(card)">
+        <img *ngIf="card.flipped || card.matched" [src]="card.image" alt="Card Image" />
+        <div class="card-back" *ngIf="!card.flipped && !card.matched"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div *ngIf="isGameWon()" class="onWin">
+    <h2>Felicidades! Ganaste!</h2>
+    <button (click)="resetGame()" id="jugarB">Jugar de Nuevo!</button>
+  </div>
+</ion-content>

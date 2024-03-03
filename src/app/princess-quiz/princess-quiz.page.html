@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>princess-quiz</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="nav('/home')">Inicio</ion-button>
+      <ion-button (click)="nav('/calculadora')">Calculadora</ion-button>
+      <ion-button (click)="nav('/memory-game')">Juego de memoria</ion-button>
+      
+
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">princess-quiz</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div *ngIf="currentQuestionIndex < questions.length">
+    <h3 class="centerObjs">{{ questions[currentQuestionIndex] }}</h3>
+    <div class="centerObjs">
+      <ion-button
+      color="tertiary"
+        *ngFor="let answer of answers[currentQuestionIndex]"
+        (click)="selectAnswer(answer)"
+      class="preguntas"
+      
+        >{{ answer }}</ion-button
+      >
+    </div>
+  </div>
+  <div *ngIf="showResult" class="centerObjs2">
+    <h2>{{ result }}</h2>
+    <p>{{ description }}</p>
+    <img src="{{img}}" alt="NO IMG" />
+  </div>
+</ion-content>

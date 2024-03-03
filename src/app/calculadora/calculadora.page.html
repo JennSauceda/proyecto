@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Calculator
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="nav('/home')">Inicio</ion-button>
+      <ion-button (click)="nav('/memory-game')">Juego de memoria</ion-button>
+      <ion-button (click)="nav('/princess-quiz')">Quiz</ion-button>
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="calculator-display">{{ currentNumber }}</div>
+  <div class="calculator-buttons">
+    <div class="calculator-row">
+      <ion-button (click)="appendNumber('7')">7</ion-button>
+      <ion-button (click)="appendNumber('8')">8</ion-button>
+      <ion-button (click)="appendNumber('9')">9</ion-button>
+      <ion-button (click)="selectOperator('/')">/</ion-button>
+    </div>
+    <div class="calculator-row">
+      <ion-button (click)="appendNumber('4')">4</ion-button>
+      <ion-button (click)="appendNumber('5')">5</ion-button>
+      <ion-button (click)="appendNumber('6')">6</ion-button>
+      <ion-button (click)="selectOperator('*')">*</ion-button>
+    </div>
+    <div class="calculator-row">
+      <ion-button (click)="appendNumber('1')">1</ion-button>
+      <ion-button (click)="appendNumber('2')">2</ion-button>
+      <ion-button (click)="appendNumber('3')">3</ion-button>
+      <ion-button (click)="selectOperator('-')">-</ion-button>
+    </div>
+    <div class="calculator-row">
+      <ion-button (click)="appendNumber('0')">0</ion-button>
+      <ion-button (click)="appendDecimal()">.</ion-button>
+      <ion-button (click)="calculate()">=</ion-button>
+      <ion-button (click)="selectOperator('+')">+</ion-button>
+    </div>
+    <div class="calculator-row">
+      <ion-button (click)="clear()">C</ion-button>
+    </div>
+  </div>
+</ion-content>
