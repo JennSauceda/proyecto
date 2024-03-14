@@ -100,6 +100,9 @@
     align-items: center;
 }
 
+ion-content{
+  --background:#f8f844;
+}
 @media (max-width: 600px) {
   .juego_mesa{ 
       grid-template-columns: repeat(2, 1fr); 
@@ -124,6 +127,7 @@
         display: inline-grid;
        
         // gap: 1rem;
+  
        
         
     }   

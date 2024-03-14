@@ -31,7 +31,7 @@ export class PrincessQuizPage implements OnInit {
   answers: string[][] = [
     ['Azul', 'Rosa', 'Verde', 'Morado'],
     ['Leer', 'Cocinar', 'Salir con amigos', 'Hacer deporte'],
-    ['Pop', 'Rock', 'Clásica', 'Reggaeton'],
+    ['Pop', 'Rock', 'Clásica', 'Reggeton'],
     ['Pizza', 'Sushi', 'Ensalada', 'Hamburguesa'],
     ['Mar', 'Montaña', 'Ambos', 'Ninguno'],
     ['Con amigos', 'En familia', 'Con una fiesta', 'De viaje'],
@@ -95,6 +95,7 @@ export class PrincessQuizPage implements OnInit {
   img: string = "";
 
   selectAnswer(answer: string) {
+    console.log(this.currentQuestionIndex);
     this.selectedAnswers.push(answer);
     if (this.currentQuestionIndex < this.questions.length - 1) {
       this.currentQuestionIndex++;

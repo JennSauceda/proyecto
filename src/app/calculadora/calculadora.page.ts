@@ -24,6 +24,7 @@ export class CalculadoraPage implements OnInit {
 
   // Función para añadir dígitos
   appendNumber(number: string) {
+    console.log("appendNumber " + number)
     if (this.waitingForSecondNumber) {
       this.currentNumber = number;
       this.waitingForSecondNumber = false;
@@ -32,6 +33,7 @@ export class CalculadoraPage implements OnInit {
         ? (this.currentNumber = number)
         : (this.currentNumber += number);
     }
+    console.log(this.currentNumber);
   }
 
   // Función para añadir punto decimal

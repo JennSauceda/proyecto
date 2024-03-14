@@ -20,7 +20,7 @@
   </ion-header>
 
   <div *ngIf="currentQuestionIndex < questions.length">
-    <h3 class="centerObjs">{{ questions[currentQuestionIndex] }}</h3>
+    <h3 class="centerObjs">{{currentQuestionIndex + 1}}: {{ questions[currentQuestionIndex] }} </h3>
     <div class="centerObjs">
       <ion-button
       color="tertiary"
